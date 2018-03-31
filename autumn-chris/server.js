@@ -10,9 +10,9 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static('public'));
 //Using express, by default, would not give public access to the files, so we have to identify the directory as accessible.
 
-// REVIEW: POST route needs to parse the body passed in with the request. express.urlencoded() attaches "middleware" to do that
+// REVIEWED: POST route needs to parse the body passed in with the request. express.urlencoded() attaches "middleware" to do that
 app.post('/articles', express.urlencoded(), function(request, response) {
-  // REVIEW: This route will receive a new article from the form page, new.html, and log that form data to the console. We will wire this up soon to actually write a record to our persistence layer!
+  // REVIEWED: This route will receive a new article from the form page, new.html, and log that form data to the console. We will wire this up soon to actually write a record to our persistence layer!
   console.log(request.body);
   response.send('Record posted to server!!');
 })
